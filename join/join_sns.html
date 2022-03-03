@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css">
+<link rel="stylesheet" href="../resources/css/layout.css?ver=a5">
+<link rel="stylesheet" href="../resources/css/main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js"></script>
+<style>
+input::placeholder {
+
+  font-size: 3.8vw;
+}
+.fa-times{
+    position: absolute;
+    right: 0vw;
+    bottom: 3.2vw;
+    color: #999999;
+	font-weight:300;
+	font-size: 3.8vw;
+}
+.fa-times2{
+    position: absolute;
+    right: 0vw;
+    bottom: 3.2vw;
+    color: #ff781e;
+	font-weight:300;
+	font-size: 3.8vw;
+}
+
+.fa-times3{
+    position: absolute;
+    right: 0vw;
+    bottom: 3.2vw;
+    color: #999999;
+	font-weight:300;
+	font-size: 3.8vw;
+}
+.fa-times4{
+    position: absolute;
+    right: 0vw;
+    bottom: 3.2vw;
+    color: #ff781e;
+	font-weight:300;
+	font-size: 3.8vw;
+}
+.fa-eye{
+    position: absolute;
+    right: 0vw;
+    bottom: 4vw;
+    color: #000;
+}
+.fa-eye-slash{
+    position: absolute;
+    right: 0vw;
+    bottom: 4vw;
+    color: #000;
+}
+
+.content_wrap .survey_content_li
+ {
+    width: 50%;
+    float: left;
+    padding: 2px 0px;
+    list-style: none;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+#survey_content_li {margin-bottom: 1vw; margin-top: 1vw;}
+
+#route {width: 4vw;}
+
+</style>
+<script>
+function lo_check()
+{
+    if($('#input_text').val() == "")
+    {
+        $('.fa-times').show();
+		$('.fa-times2').hide();
+    }
+    else
+    {
+        $('.fa-times2').show();
+		$('.fa-times').hide();
+    }
+
+	if($('#input_phone').val() == "")
+    {
+        $('.fa-times3').show();
+		$('.fa-times4').hide();
+    }
+    else
+    {
+        $('.fa-times4').show();
+		$('.fa-times3').hide();
+    }
+
+    if($('#input_pw').val() == "")
+    {
+        $('.fa-eye').hide();
+    }
+    else
+    {
+        $('.fa-eye').show();
+    }
+
+    if($('#input_text').val() != "" && $('#input_name').val() != "" && $('#input_phone').val() != "" )
+    {
+        $('#TestBtn').addClass('btn_login_on');
+        $('#TestBtn').removeClass('btn_login');
+        $('#TestBtn').removeAttr('disabled');
+    }
+    else
+    {
+        $('#TestBtn').addClass('btn_login');
+        $('#TestBtn').removeClass('btn_login_on');
+        $('#TestBtn').attr('disabled', 'disabled');
+    }
+}
+function click_id()
+{
+    $('#input_text').val('');
+    lo_check();
+}
+function click_pass()
+{
+    if($('#input_pw').attr('type') == "password")
+    {
+        $('#input_pw').attr('type', 'text');
+        $('#pass_i').addClass('fa-eye-slash');
+        $('#pass_i').removeClass('fa-eye');
+    }
+    else
+    {
+        $('#input_pw').attr('type', 'password');
+        $('#pass_i').addClass('fa-eye');
+        $('#pass_i').removeClass('fa-eye-slash');
+    }
+    lo_check();
+}
+</script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+    <!-- 상단 -->
+    <header class="login_header">
+        <div class="inner">
+            <a href="../login/index.html" class="btn_back"><span class="blind">뒤로가기</span></a>
+            <a href="#" class="sub_title">회원가입 (추가정보 입력)</a>
+
+        </div>
+    </header>
+    <!-- //상단 -->
+
+
+
+
+    <!-- 본문내용 -->
+    <div class="container login_content">
+        <!-- 매장리스트 -->
+        <section class="input_list">
+            <div class="inner">
+                <ul>
+                    <li>
+                       <div class="content_wrap" style="position: relative;">
+                         <p class="title">이메일 <span style="color:#ff781e">*</span></p>
+						    <fieldset>
+                                <input type="text" id="input_text" name="id" value="" title="아이디" placeholder="이메일을 입력해 주세요" class="login_input" style="text-indent: 0px;" onkeyup="lo_check();">
+                                <i class="fa-times"  >중복확인</i>
+								 <i class="fa-times2"  style="display:none; cursor:pointer;" onclick="#">중복확인</i>
+								
+                            </fieldset>
+                       </div>
+                     </li>
+
+					 <li>
+                       <div class="content_wrap" style="position: relative;">
+                         <p class="title">이름 <span style="color:#ff781e">*</span></p>
+						    <fieldset>
+                                <input type="text" id="input_name" name="name" value="" title="이름" placeholder="이름(실명)을 입력해 주세요" class="login_input" style="text-indent: 0px;" onkeyup="lo_check();">
+                             
+                            </fieldset>
+                       </div>
+                     </li>
+
+					  <li>
+                       <div class="content_wrap" style="position: relative;">
+                         <p class="title">휴대폰번호 (-제외)<span style="color:#ff781e">*</span></p>
+						    <fieldset>
+                                
+								<input type="text" id="input_phone" name="phone" value="" title="휴대폰번호" placeholder="번호를 입력해 주세요" class="login_input" style="text-indent: 0px;" onkeyup="lo_check();"  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                                <i class="fa-times3"  >인증번호 전송</i>
+								 <i class="fa-times4"  style="display:none; cursor:pointer;" onclick="#">인증번호 전송</i>
+                            </fieldset>
+                       </div>
+                     </li>
+
+					  <li>
+                       <div class="content_wrap" style="position: relative;">
+                         <p class="title">방문경로</p>
+						   
+						   <ul>
+						    <li class="survey_content_li" id="survey_content_li">
+                            <input style="width:4vw;" type="radio" name="route" id="route_1" value="네이버">
+                 			<label for="route_1">네이버</label>
+                           </li>
+
+						    <li class="survey_content_li" id="survey_content_li">
+                            <input style="width:4vw;" type="radio" name="route" id="route_2" value="다음,카카오">
+                 			<label for="route_2">다음,카카오</label>
+                           </li>
+
+						    <li class="survey_content_li" id="survey_content_li">
+                            <input style="width:4vw;" type="radio" name="route" id="route_3" value="페이스북">
+                 			<label for="route_3">페이스북</label>
+                           </li>
+
+						    <li class="survey_content_li" id="survey_content_li">
+                            <input style="width:4vw;" type="radio" name="route" id="route_4" value="인스타그램">
+                 			<label for="route_4">인스타그램</label>
+                           </li>
+
+						    <li class="survey_content_li" id="survey_content_li">
+                            <input style="width:4vw;" type="radio" name="route" id="route_5" value="유튜브">
+                 			<label for="route_5">유튜브</label>
+                           </li>
+
+						    <li class="survey_content_li" id="survey_content_li">
+                            <input style="width:4vw;" type="radio" name="route" id="route_6" value="샵추천">
+                 			<label for="route_6">샵추천</label>
+                           </li>
+
+						    <li class="survey_content_li" id="survey_content_li">
+                            <input style="width:4vw;" type="radio" name="route" id="route_7" value="기타">
+                 			<label for="route_7">기타</label>
+							
+                           </li>
+						   
+                                
+                                 <input type="text" id="input_e" name="etc" value="" title="이름" placeholder="기타 방문경로를 입력해 주세요." class="login_input" style="text-indent: 0px;" >
+                               
+                            </label>
+							</ul>
+                       </div>
+                     </li>
+
+                  <button type="button" disabled="disabled" id="TestBtn" class="btn_login">완료</button>
+
+                </ul>
+            </div>
+        </section>
+        <!-- //매장리스트 -->
+
+    </div>
+    <!-- //본문내용 -->
+
+ 
+
+
+
+</div>
+</body>
+</html>

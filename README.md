@@ -1,1 +1,0 @@
-# softkr.github.io

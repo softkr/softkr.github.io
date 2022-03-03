@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="imagetoolbar" content="no">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+<title>펫미</title>
+<link rel="stylesheet" href="../resources/css/common.css">
+<link rel="stylesheet" href="../resources/css/layout.css?ver=a3">
+<link rel="stylesheet" href="../resources/css/main.css">
+<script src="../resources/js/jquery-3.4.1.js"></script>
+<script src="../resources/js/common.js"></script>
+<style>
+input[type=checkbox] {
+    display:none;
+}
+#checker1 + label {
+    cursor: pointer;
+    padding-left: 8vw;
+    background-repeat: no-repeat;
+    background-image: url('530.png');
+	background-size: 6.1vw;
+	color: #1a1a1a;
+	font-weight: 700;
+}
+#checker1:checked + label {
+    background-image: url('531.png');
+}
+
+#checker2 + label {
+    cursor: pointer;
+    padding-left: 8vw;
+    background-repeat: no-repeat;
+    background-image: url('532.png');
+	background-size: 6.1vw;
+	color: #1a1a1a;
+	font-weight: 400;
+}
+#checker2:checked + label {
+    background-image: url('533.png');
+}
+
+#checker3 + label {
+    cursor: pointer;
+    padding-left: 8vw;
+    background-repeat: no-repeat;
+    background-image: url('532.png');
+	background-size: 6.1vw;
+	color: #1a1a1a;
+	font-weight: 400;
+}
+#checker3:checked + label {
+    background-image: url('533.png');
+}
+
+#checker4 + label {
+    cursor: pointer;
+    padding-left: 8vw;
+    background-repeat: no-repeat;
+    background-image: url('532.png');
+	background-size: 6.1vw;
+	color: #1a1a1a;
+	font-weight: 400;
+}
+#checker4:checked + label {
+    background-image: url('533.png');
+}
+
+#checker5 + label {
+    cursor: pointer;
+    padding-left: 8vw;
+    background-repeat: no-repeat;
+    background-image: url('532.png');
+	background-size: 6.1vw;
+	color: #1a1a1a;
+	font-weight: 400;
+}
+#checker5:checked + label {
+    background-image: url('533.png');
+}
+
+.agree1 p {
+    font-size: 5vw;
+    border-bottom: 0.4vw solid #e0e0e0;
+	padding-bottom: 6vw;
+}
+
+.agree2 {padding-top: 4vw;}
+
+.agree2 p {
+    font-size: 4.26vw;
+
+   padding-bottom: 3vw;
+   }
+
+</style>
+
+<script>
+function selectAll(selectAll)  {
+  const checkboxes
+       = document.getElementsByName('checker');
+
+  checkboxes.forEach((checkbox) => {
+    checkbox.checked = selectAll.checked;
+  })
+}
+function click_check()
+{
+    if($("#checker2").is(":checked") == true && $("#checker3").is(":checked") == true && $("#checker4").is(":checked") == true)
+    {
+        $('#TestBtn').addClass('btn_login_on');
+        $('#TestBtn').removeClass('btn_login');
+        $('#TestBtn').removeAttr('disabled');
+    }
+    else
+    {
+        $('#TestBtn').addClass('btn_login');
+        $('#TestBtn').removeClass('btn_login_on');
+        $('#TestBtn').attr('disabled', 'disabled');
+    }
+}
+</script>
+</head>
+<body>
+
+<div class="wrap" id="wrap">
+    <!-- 상단 -->
+    <header class="login_header">
+        <div class="inner">
+            <a href="../login/index.html" class="btn_back"><span class="blind">뒤로가기</span></a>
+            <a href="#" class="sub_title">회원가입</a>
+
+        </div>
+    </header>
+    <!-- //상단 -->
+
+
+
+
+    <!-- 본문내용 -->
+    <div class="container join_content">
+        <!-- 매장리스트 -->
+        <section class="join_list">
+            <div class="inner">
+                <div class="sect_title">
+
+					<h2>펫미에 오신것을<br>환영 합니다.</h2>
+
+
+
+                </div>
+
+				 <div class="agree1">
+                    <p><input type="checkbox"  name="checker" id="checker1" value='selectall'
+       onclick='selectAll(this); click_check();'> <label for="checker1">전체 동의하기</p>
+
+				 </div>
+
+				  <div class="agree2">
+                    <p><input type="checkbox"  name="checker" id="checker2" value="1" onclick="click_check();"> <label for="checker2">펫미 이용약관 동의</p>
+					<p><input type="checkbox"  name="checker" id="checker3" value="1" onclick="click_check();"> <label for="checker3">개인정보 수집 및 이용 동의 </p>
+					<p><input type="checkbox"  name="checker" id="checker4" value="1" onclick="click_check();"> <label for="checker4">개인정보 제3자 제공 동의</p>
+					<p><input type="checkbox"  name="checker" id="checker5" value="0"> <label for="checker5">마케팅 수신 동의(선택)</p>
+
+				 </div>
+
+			     <button type="button" disabled="disabled" id="TestBtn" class="btn_login">로그인</button>
+
+
+
+            </div>
+        </section>
+        <!-- //매장리스트 -->
+
+
+
+    </div>
+    <!-- //본문내용 -->
+
+    <!-- 하단 -->
+    <footer class="footer">
+
+        <ul class="ft_login_2">
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">아이디 찾기</a></li>
+            <li><a href="#">비밀번호 찾기</a></li>
+        </ul>
+    </footer>
+    <!-- //하단 -->
+
+
+
+</div>
+</body>
+</html>
