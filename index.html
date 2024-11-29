@@ -1,743 +1,168 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="imagetoolbar" content="no" />
-    <meta name="format-detection" content="telephone=no" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <meta http-equiv="Expires" content="Mon, 06 Jan 1990 00:00:01 GMT" />
-    <meta http-equiv="Expires" content="-1" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Cache-Control" content="no-cache" />
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
 
-    <meta
-      name="viewport"
-      content="width=device-width,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"
-    />
-    <title>펫미</title>
-    <link rel="stylesheet" href="./resources/css/common.css" />
-    <link rel="stylesheet" href="./resources/css/layout.css" />
-    <link rel="stylesheet" href="./resources/css/main.css" />
-    <script src="./resources/js/jquery-3.4.1.js"></script>
-    <script src="./resources/js/common.js"></script>
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
 
-    <!-- 스와이퍼 4.5.1 -->
-    <link rel="stylesheet" href="./resources/css/swiper.min.css" />
-    <script src="./resources/js/swiper.min.js"></script>
-  </head>
-  <body>
-    <div class="wrap" id="wrap">
-      <!-- 상단 -->
-      <header class="main_header">
-        <nav class="gnb">
-          <div class="alert"><span class="blind">알림</span></div>
-          <a href="#" class="location">
-            <span class="loca_tit">강남구 역삼동</span>
-            <span class="loca_arrow"
-              ><img src="./resources/images/common/icon_down.png" alt=""
-            /></span>
-          </a>
-          <!-- 검색 -->
-          <button type="button" title="전체검색" class="search">
-            <span class="blind">전체검색</span>
-          </button>
-          <div class="search_wrap">
-            <div class="dim_bg"></div>
-            <div class="search_content">
-              <a href="javascript:;" class="search_btn_close"
-                ><span class="blind">검색닫기</span></a
-              >
-              <div class="search_bar">
-                <form name="search" method="get" action="/m/search.html">
-                  <fieldset>
-                    <legend>검색 폼</legend>
-                    <input
-                      type="text"
-                      name="s"
-                      value=""
-                      title="검색어를 입력"
-                      placeholder="검색어를 입력하세요."
-                      class="search_result"
-                    />
-                  </fieldset>
-                </form>
-                <button type="button" title="전체검색" class="btn_allsearch">
-                  <span class="blind">전체검색</span>
-                </button>
-              </div>
-              <div class="search_text">
-                <a href="#">#반려견 미용</a>
-                <a href="#">#반려묘 미용</a>
-                <a href="#">#호텔</a>
-                <a href="#">#유치원</a>
-                <a href="#">#애견미용실</a>
-                <a href="#">#우리동네매장</a>
-              </div>
-            </div>
-          </div>
-          <!-- //검색 -->
-        </nav>
-      </header>
-      <!-- //상단 -->
+        nav {
+            background-color: #34495e;
+            padding: 1rem;
+        }
 
-      <!-- 본문내용 -->
-      <div class="container main">
-        <!-- 메인비주얼 -->
-        <section class="swiper-container slider_visual">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <a href="#">
-                <div class="visual_text">
-                  <p class="title">
-                    펫미와 함께 건강한<br />반려라이프를 함께해요!
-                  </p>
-                  <p class="desc">선착순 30% 할인쿠폰 받기</p>
-                </div>
-                <figure>
-                  <img src="./resources/images/main/img_visual_01.png" alt="" />
-                </figure>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <div class="visual_text">
-                  <p class="title">반려견 마을과<br />반려라이프를 함께해요!</p>
-                  <p class="desc">선착순 30% 할인쿠폰 받기</p>
-                </div>
-                <figure>
-                  <img src="./resources/images/main/img_visual_02.png" alt="" />
-                </figure>
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="#">
-                <div class="visual_text">
-                  <p class="title">
-                    펫미와 함께 건강한<br />반려라이프를 함께해요!
-                  </p>
-                  <p class="desc">선착순 30% 할인쿠폰 받기</p>
-                </div>
-                <figure>
-                  <img src="./resources/images/main/img_visual_03.png" alt="" />
-                </figure>
-              </a>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </section>
-        <!-- //메인비주얼 -->
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
 
-        <!-- 메인퀵메뉴 -->
-        <section class="main_section_quickmenu">
-          <ul class="quickmenu_wrap">
-            <li>
-              <a href="#">
-                <img
-                  src="./resources/images/main/img_quickmenu_01.png"
-                  alt=""
-                />
-                <p>반려견미용</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="./resources/images/main/img_quickmenu_02.png"
-                  alt=""
-                />
-                <p>반려묘미용</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="./resources/images/main/img_quickmenu_03.png"
-                  alt=""
-                />
-                <p>호텔</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <img
-                  src="./resources/images/main/img_quickmenu_04.png"
-                  alt=""
-                />
-                <p>유치원</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-        <!-- //메인퀵메뉴 -->
-        <!-- 메인퀵메뉴:상단 fixed -->
-        <section class="header_quickmenu">
-          <ul class="quickmenu_wrap">
-            <li>
-              <a href="#">
-                <p>반려견미용</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p>반려묘미용</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p>호텔</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p>유치원</p>
-              </a>
-            </li>
-          </ul>
-        </section>
-        <!-- //메인퀵메뉴:상단 fixed -->
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-        <!-- 최근본매장 -->
-        <section class="main_section_store">
-          <div class="inner">
-            <div class="sect_title">
-              <h2>최근 본 매장</h2>
-              <a href="./sub/lately.html" class="icon_arrow"
-                ><span class="blind">바로가기</span></a
-              >
-            </div>
-          </div>
-          <div class="swiper-container slider_store">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_mainstore_01.png"
-                      alt=""
-                    />
-                  </figure>
-                  <p class="title">독살롱다음애견.</p>
-                  <p class="desc">서울 강서구</p>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_mainstore_02.png"
-                      alt=""
-                    />
-                  </figure>
-                  <p class="title">그루밍살롱 애견.</p>
-                  <p class="desc">서울 강서구</p>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_mainstore_03.png"
-                      alt=""
-                    />
-                  </figure>
-                  <p class="title">차르로르 애견.</p>
-                  <p class="desc">서울 강서구</p>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_mainstore_04.png"
-                      alt=""
-                    />
-                  </figure>
-                  <p class="title">독살롱다음애견.</p>
-                  <p class="desc">서울 강서구</p>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_mainstore_05.png"
-                      alt=""
-                    />
-                  </figure>
-                  <p class="title">독살롱다음애견.</p>
-                  <p class="desc">서울 강서구</p>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_mainstore_06.png"
-                      alt=""
-                    />
-                  </figure>
-                  <p class="title">그루밍살롱 애견.</p>
-                  <p class="desc">서울 강서구</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- //최근본매장 -->
+        nav a:hover {
+            color: #3498db;
+        }
 
-        <!-- 프리미엄샵 -->
-        <section class="main_section_premium">
-          <div class="inner">
-            <div class="sect_title">
-              <h2>프리미엄 샵</h2>
-            </div>
-          </div>
-          <div class="swiper-container slider_premium">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <img
-                      src="./resources/images/main/img_premium_01.png"
-                      alt=""
-                    />
-                    <p class="text">반려견미용·유치원</p>
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">독살롱 다음 <br />애견 미용실</p>
-                    <p class="desc">댕댕이를 위한 스트레스 없.</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253)
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <img
-                      src="./resources/images/main/img_premium_02.png"
-                      alt=""
-                    />
-                    <p class="text">반려견미용·유치원</p>
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">그루밍 살롱 <br />애견 댕댕이 미용실</p>
-                    <p class="desc">댕댕이를 위한 스트레스 없.</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253)
-                    </p>
-                  </div>
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <figure class="thumbimg">
-                    <img
-                      src="./resources/images/main/img_premium_03.png"
-                      alt=""
-                    />
-                    <p class="text">반려견미용·유치원</p>
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">견생컷</p>
-                    <p class="desc">댕댕이를 위한 스트레스 없.</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253)
-                    </p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </section>
-        <!-- //프리미엄샵 -->
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-        <!-- 우리동네 매장 -->
-        <section class="main_section_local">
-          <div class="inner">
-            <div class="sect_title">
-              <h2>우리동네 매장</h2>
-              <a href="#" class="icon_arrow"
-                ><span class="blind">바로가기</span></a
-              >
-            </div>
-            <ul class="local_list">
-              <li>
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_local_01.png"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">그루밍살롱 애견호텔 유치원</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253) 서울 강남구 |
-                      2.5km
-                    </p>
-                    <p class="category">반려견미용·호텔</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_local_02.png"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">그루밍살롱 애견호텔 유치원</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253) 서울 강남구 |
-                      2.5km
-                    </p>
-                    <p class="category">반려견미용·유치원</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_local_03.png"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">그루밍살롱 애견호텔 유치원</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253) 서울 강남구 |
-                      2.5km
-                    </p>
-                    <p class="category">반려견미용·호텔</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_local_04.png"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">그루밍살롱 애견호텔 유치원</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253) 서울 강남구 |
-                      2.5km
-                    </p>
-                    <p class="category">반려견미용·유치원</p>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <figure class="thumbimg">
-                    <span class="mark">제휴</span>
-                    <img
-                      src="./resources/images/main/img_local_05.png"
-                      alt=""
-                    />
-                  </figure>
-                  <div class="text_wrap">
-                    <p class="title">그루밍살롱 애견호텔 유치원</p>
-                    <p class="rate">
-                      <span class="rate_all">5.0</span> (1,253) 서울 강남구 |
-                      2.5km
-                    </p>
-                    <p class="category">반려견미용</p>
-                  </div>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-        <!-- //우리동네 매장 -->
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
 
-        <!-- 롤링배너 -->
-        <section class="main_section_banner">
-          <div class="swiper-container slider_banner">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <a href="#">
-                  <img src="./resources/images/main/img_banner_01.png" alt="" />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img src="./resources/images/main/img_banner_02.png" alt="" />
-                </a>
-              </div>
-              <div class="swiper-slide">
-                <a href="#">
-                  <img src="./resources/images/main/img_banner_03.png" alt="" />
-                </a>
-              </div>
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </section>
-        <!-- //롤링배너 -->
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
 
-        <!-- 내주변 매장 포트폴리오 -->
-        <section class="main_section_portfolio">
-          <div class="inner">
-            <div class="sect_title">
-              <h2>내주변 매장 포트폴리오</h2>
-              <a href="#" class="icon_arrow"
-                ><span class="blind">바로가기</span></a
-              >
-            </div>
-            <div class="portfolio_wrap">
-              <ul class="portfolio_tab">
-                <li data-id="portfolio_con1" class="on">반려견미용</li>
-                <li data-id="portfolio_con2">반려묘미용</li>
-                <li data-id="portfolio_con3">호텔</li>
-                <li data-id="portfolio_con4">유치원</li>
-              </ul>
-              <!-- 포트폴리오 : 내용1 -->
-              <div id="portfolio_con1" class="content on">
-                <ul class="portfolio_content">
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_01.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 11</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_02.png"
-                        alt=""
-                      />
-                      <p class="text">클리핑 11</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_03.png"
-                        alt=""
-                      />
-                      <p class="text">스포팅 11</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_04.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 11</p>
-                    </figure>
-                  </li>
-                </ul>
-              </div>
-              <!-- //포트폴리오 : 내용1 -->
-              <!-- 포트폴리오 : 내용2 -->
-              <div id="portfolio_con2" class="content">
-                <ul class="portfolio_content">
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_03.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 22</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_01.png"
-                        alt=""
-                      />
-                      <p class="text">클리핑 22</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_02.png"
-                        alt=""
-                      />
-                      <p class="text">스포팅 22</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_04.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 22</p>
-                    </figure>
-                  </li>
-                </ul>
-              </div>
-              <!-- //포트폴리오 : 내용2 -->
-              <!-- 포트폴리오 : 내용3 -->
-              <div id="portfolio_con3" class="content">
-                <ul class="portfolio_content">
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_04.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 33</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_02.png"
-                        alt=""
-                      />
-                      <p class="text">클리핑 33</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_01.png"
-                        alt=""
-                      />
-                      <p class="text">스포팅 33</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_03.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 33</p>
-                    </figure>
-                  </li>
-                </ul>
-              </div>
-              <!-- //포트폴리오 : 내용3 -->
-              <!-- 포트폴리오 : 내용4 -->
-              <div id="portfolio_con4" class="content">
-                <ul class="portfolio_content">
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_03.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 44</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_02.png"
-                        alt=""
-                      />
-                      <p class="text">클리핑 44</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_01.png"
-                        alt=""
-                      />
-                      <p class="text">스포팅 44</p>
-                    </figure>
-                  </li>
-                  <li>
-                    <figure>
-                      <img
-                        src="./resources/images/main/img_portfolio_04.png"
-                        alt=""
-                      />
-                      <p class="text">가위컷 44</p>
-                    </figure>
-                  </li>
-                </ul>
-              </div>
-              <!-- //포트폴리오 : 내용4 -->
-            </div>
-          </div>
-        </section>
-        <!-- //내주변 매장 포트폴리오 -->
+        .about-me {
+            flex: 1;
+        }
 
-        <!-- 공지사항 -->
-        <section class="main_section_notice">
-          <a href="#">
-            <span class="noti_title">NOTICE</span>
-            <span class="noti_content">시스템 점검 안내</span>
-          </a>
-        </section>
-        <!-- //공지사항 -->
-      </div>
-      <!-- //본문내용 -->
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
 
-      <!-- 하단 -->
-      <footer class="footer">
-        <div class="btn_top_wrap">
-          <a href="#wrap" class="btn_top"><span class="blind">top</span></a>
-        </div>
-        <div class="ft_info">
-          <div class="info_text">(주)펫미 사업자 정보</div>
-          <div class="info_con">
-            <dl>
-              <dt>대표이사</dt>
-              <dd>백영호</dd>
-              <dt>주소</dt>
-              <dd>서울시 강남구 역삼로 222 휘닉스빌딩 4층</dd>
-              <dt>사업자등록번호</dt>
-              <dd>565 - 81 - 01048</dd>
-              <dt>통신판매업 신고번호</dt>
-              <dd>제2022 - 서울강남 - 00098호</dd>
-            </dl>
-          </div>
-        </div>
-        <div class="ft_desc">
-          (주)펫미는 통신판매중개자로서 통신판매의 당사자가 아니며, 상품
-          거래정보 및 거래 등에 대해 책임을 지지 않습니다.
-        </div>
-        <ul class="ft_menu">
-          <li><a href="#">사업자정보확인</a></li>
-          <li><a href="#">이용약관</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
+        .project-card {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .profile-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>홍길동</h1>
+        <p>풀스택 개발자</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">소개</a></li>
+            <li><a href="#projects">프로젝트</a></li>
+            <li><a href="#contact">연락처</a></li>
         </ul>
-      </footer>
-      <!-- //하단 -->
+    </nav>
 
-      <!-- 툴바 -->
-      <div class="toolbar">
-        <a href="#"><span class="map">내주변</span></a>
-        <a href="#"><span class="portfolio">포트폴리오</span></a>
-        <a href="#"><span class="home"></span></a>
-        <a href="#"><span class="reservation">예약</span></a>
-        <a href="#"><span class="my">MY</span></a>
-      </div>
-      <!-- //툴바 -->
+    <div class="main-content">
+        <section id="about" class="profile-section">
+            <img src="/api/placeholder/200/200" alt="프로필 사진" class="profile-image">
+            <div class="about-me">
+                <h2>안녕하세요!</h2>
+                <p>저는 프론트엔드부터 백엔드까지 전반적인 웹 개발 경험을 가진 풀스택 개발자입니다.
+                   효율적인 서버 구조 설계와 사용자 친화적인 UI/UX 구현에 강점이 있습니다.</p>
+                <p>기술 스택:</p>
+                <ul style="list-style-type: none; padding: 10px 0;">
+                    <li>🌐 프론트엔드: HTML, CSS, JavaScript, React, Vue.js</li>
+                    <li>⚙️ 백엔드: Node.js, Python, Java Spring</li>
+                    <li>📊 데이터베이스: MySQL, MongoDB, PostgreSQL</li>
+                    <li>🛠️ 개발도구: Git, Docker, AWS</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>프로젝트</h2>
+            <div class="projects">
+                <div class="project-card">
+                    <h3>프로젝트 1</h3>
+                    <p>프로젝트에 대한 간단한 설명이 들어갑니다.</p>
+                </div>
+                <div class="project-card">
+                    <h3>프로젝트 2</h3>
+                    <p>프로젝트에 대한 간단한 설명이 들어갑니다.</p>
+                </div>
+                <div class="project-card">
+                    <h3>프로젝트 3</h3>
+                    <p>프로젝트에 대한 간단한 설명이 들어갑니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>연락처</h2>
+            <p>Email: example@email.com</p>
+            <p>GitHub: github.com/username</p>
+        </section>
     </div>
-  </body>
+
+    <footer>
+        <p>&copy; 2024 My Personal Website. All rights reserved.</p>
+    </footer>
+</body>
 </html>
